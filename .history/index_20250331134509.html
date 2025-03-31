@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Restaurante Beira Rio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Restaurante Beira Rio</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Bem-vindo ao Restaurante Beira Rio</h1>
+                <p>O melhor da comida caseira com sabor de família</p>
+            </div>
+            <div class="hero-image">
+                <img src="./imagens/frente-beira-rio.jpeg" alt="Frente do Restaurante Beira Rio">
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <h2>Nosso Cardápio</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Feijoada Completa</h3>
+                    <p>Nossa tradicional feijoada com acompanhamentos</p>
+                    <span class="price">R$ 45,00</span>
+                </div>
+                <div class="menu-item">
+                    <h3>Frango à Parmegiana</h3>
+                    <p>Acompanha arroz e batatas fritas</p>
+                    <span class="price">R$ 35,00</span>
+                </div>
+                <div class="menu-item">
+                    <h3>Bife à Role</h3>
+                    <p>Com purê de batatas e legumes</p>
+                    <span class="price">R$ 40,00</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <h2>Nosso Ambiente</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="./imagens/interna-2.jpeg" alt="Ambiente do Restaurante">
+                </div>
+                <div class="gallery-item">
+                    <img src="./imagens/interna-2.jpg" alt="Área Interna">
+                </div>
+                <div class="gallery-item">
+                    <img src="./imagens/ambiente-3.jpg" alt="Área Externa">
+                </div>
+                <div class="gallery-item">
+                    <img src="./imagens/ambiente-4.jpg" alt="Salão Principal">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>Sobre Nós</h2>
+            <p>Há mais de 20 anos servindo comida caseira de qualidade, com receitas tradicionais passadas de geração em geração.</p>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contato</h2>
+            <p>Faça sua reserva:</p>
+            <p>📞 (11) 1234-5678</p>
+            <p>📍 Rua das Delícias, 123 - Centro</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sabor Caseiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Add WhatsApp button here, before the script -->
+    <a href="https://wa.me/5511123456789" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+    
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

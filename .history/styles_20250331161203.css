@@ -1,0 +1,694 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', sans-serif;
+    line-height: 1.6;
+}
+
+.logo {
+   
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    
+    font-weight: 300;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.menu-item h3 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6b6b;
+}
+
+.hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+   
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-section {
+    padding: 4rem 2rem;
+}
+
+.about-section {
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: var(--text-color);
+    padding: 4rem 2rem;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Keep only these two animation keyframes and remove others */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply fade animation to all sections except menu items */
+header,
+.logo,
+.nav-links li,
+.hero,
+.daily-sides,
+.price-options,
+.about-section,
+.contact-section,
+footer {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Animation delays */
+.daily-sides { animation-delay: 0.8s; }
+.price-options { animation-delay: 1.0s; }
+
+/* Specific animation for menu items */
+.menu-item {
+    background-color: #FFFFFF;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+/* Menu items delay */
+.menu-grid .menu-item:nth-child(1) { animation-delay: 0.3s; }
+.menu-grid .menu-item:nth-child(2) { animation-delay: 0.6s; }
+.menu-grid .menu-item:nth-child(3) { animation-delay: 0.9s; }
+.menu-grid .menu-item:nth-child(4) { animation-delay: 1.2s; }
+.menu-grid .menu-item:nth-child(5) { animation-delay: 1.5s; }
+.menu-grid .menu-item:nth-child(6) { animation-delay: 1.8s; }
+
+
+
+.menu-item h3 {
+    color: #ff6b6b;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #2ecc71;
+}
+
+.about-section {
+    background-color: #f9f9f9;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-section {
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .whatsapp-button {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-button img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .menu-item {
+        padding: 1rem;
+    }
+}
+
+/* Update WhatsApp button styles */
+@keyframes slideWhatsapp {
+    from {
+        opacity: 0;
+        right: calc(100% - 60px); /* Começa na extremidade esquerda */
+    }
+    to {
+        opacity: 1;
+        right: 20px; /* Termina na posição final à direita */
+    }
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 90px; /* Ajustado para ficar acima do footer */
+    right: 20px;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: slideWhatsapp 1.2s ease-out forwards;
+    animation-delay: 2s;
+}
+
+footer {
+    font-family: 'sans-serif';
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0; 
+}
+
+@media (max-width: 768px) {
+    .whatsapp-button {
+        position: fixed;
+        top: 100px; /* Posiciona abaixo do nav */
+        right: 20px;
+        bottom: auto;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-button img {
+        width: 30px;
+        height: 30px;
+    }
+
+    nav {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-button {
+        top: 90px; /* Ajusta para telas ainda menores */
+    }
+}
+
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+
+
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        background: rgba(248, 248, 248, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+
+  
+}
+
+/* Update color scheme */
+:root {
+    --primary-color: #8B4513;     /* Saddle Brown - warm wood color */
+    --secondary-color: #DEB887;   /* Burlywood - light warm tone */
+    --accent-color: #A0522D;      /* Sienna - rich earth tone */
+    --text-color: #4A3728;        /* Dark brown for text */
+    --light-bg: #FFF8DC;         /* Cornsilk - light warm background */
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+    color: #FFF8DC;
+}
+
+nav ul li a {
+    color: #FFF8DC;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.menu-item {
+    background-color: #FFFFFF;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.menu-item h3 {
+    color: var(--primary-color);
+}
+
+.price {
+    color: var(--accent-color);
+}
+
+.about-section {
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Remover duplicação do logo */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #FFF8DC;
+}
+
+/* Remover duplicação dos delays de animação do menu */
+.menu-grid .menu-item:nth-child(1) { animation-delay: 0.3s; }
+.menu-grid .menu-item:nth-child(2) { animation-delay: 0.6s; }
+.menu-grid .menu-item:nth-child(3) { animation-delay: 0.9s; }
+.menu-grid .menu-item:nth-child(4) { animation-delay: 1.2s; }
+.menu-grid .menu-item:nth-child(5) { animation-delay: 1.5s; }
+
+/* Corrigir estilos do menu item */
+.menu-item {
+    background-color: #FFFFFF;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    animation: slideInFromLeft 0.8s ease-out forwards;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Remover media query duplicada e corrigir aninhamento */
+@media (max-width: 768px) {
+    nav {
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none; /* Oculta o menu em telas menores */
+    }
+
+    .logo {
+        font-size: 1.6rem;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+/* Remover estilos do hamburger que não são mais necessários */
+    .menu-item:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+    }.menu-item:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+    }.menu-item:hover {
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+    }
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+    
+
+.map-container {
+    margin-top: 2rem;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    display: block;
+}
+
+.daily-sides {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #FFF8DC;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: -1rem auto 3rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    max-width: 800px;
+    transform: translateY(-20px);
+}
+
+.daily-sides h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sides-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sides-list span {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #FFF8DC;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-weight: 500;
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.sides-list span:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+.gallery-section {
+    padding: 2rem;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    flex: 0 0 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.price-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+.price-item {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #FFF8DC;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.price-item h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.price-item .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFF8DC;
+}
+
+@media (max-width: 768px) {
+    .price-options {
+        gap: 1rem;
+    }
+    
+    .price-item {
+        min-width: 150px;
+        padding: 1rem;
+    }
+}
