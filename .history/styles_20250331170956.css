@@ -424,7 +424,7 @@ footer {
         list-style: none;
     }
     
-
+    /* Depois, ocultamos completamente em dispositivos não desktop */
     @media (max-width: 1024px) {
         .nav-links {
             display: none !important;

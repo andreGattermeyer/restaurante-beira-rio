@@ -418,72 +418,57 @@ footer {
         font-size: 1.8rem;
     }
 
-
     .nav-links {
-        display: flex;
-        list-style: none;
-    }
-    
-
-    @media (max-width: 1024px) {
-        .nav-links {
-            display: none !important;
-        }
-    
-        nav {
-            justify-content: center;
-            padding: 1rem;
-        }
-    
-        .logo {
-            font-size: 1.8rem;
-            text-align: center;
-            width: 100%;
-        }
-    }
-    
-    /* Remover estas regras antigas da nav-links em mobile */
-    @media (max-width: 768px) {
-        nav {
-            position: relative;
-            justify-content: center;
-        }
-    
-        .logo {
-            font-size: 1.8rem;
-        }
-    
-        /* Remover todo este bloco
+        /* Primeiro, definimos o comportamento padrão para desktop */
         .nav-links {
             display: flex;
-            position: fixed;
-            top: 0;
-            right: -100%;
-            height: 100vh;
-            width: 100%;
-            background: rgba(248, 248, 248, 0.98);
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: 0.5s ease;
-            z-index: 1000;
+            list-style: none;
         }
-    
-        .nav-links.active {
-            right: 0;
+        
+        /* Depois, aplicamos a regra para dispositivos não desktop */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none !important; /* Força a ocultação */
+            }
+        
+            nav {
+                justify-content: center;
+            }
+        
+            .logo {
+                font-size: 1.8rem;
+                text-align: center;
+                width: 100%;
+            }
         }
-    
-        .nav-links li {
-            margin: 1.5rem 0;
-        }
-    
-        .nav-links li a {
-            font-size: 1.2rem;
-        }
-        */
+        
+        /* Remover ou comentar as outras regras de media query relacionadas à nav-links */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        background: rgba(248, 248, 248, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease;
+        z-index: 1000;
     }
 
+    .nav-links.active {
+        right: 0;
+    }
 
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+
+  
 }
 
 

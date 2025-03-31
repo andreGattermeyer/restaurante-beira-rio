@@ -418,13 +418,13 @@ footer {
         font-size: 1.8rem;
     }
 
-
+    /* Primeiro, definimos o estilo base da nav-links */
     .nav-links {
         display: flex;
         list-style: none;
     }
     
-
+    /* Depois, ocultamos completamente em dispositivos não desktop */
     @media (max-width: 1024px) {
         .nav-links {
             display: none !important;
