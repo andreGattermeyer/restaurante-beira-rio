@@ -739,7 +739,7 @@ footer {
 .back-to-top {
     position: fixed;
     bottom: 20px;
-    right: 90px;
+    right: 90px; /* Posicionado à direita do botão do WhatsApp */
     background-color: var(--primary-color);
     color: var(--light-text);
     width: 50px;
@@ -751,13 +751,7 @@ footer {
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
     z-index: 999;
-    opacity: 0; /* Começa invisível */
-    visibility: hidden; /* Começa escondido */
-}
-
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1; /* Alterado para ser visível por padrão */
 }
 
 .back-to-top:hover {
